@@ -1,0 +1,72 @@
+SD GUI 1.11.0 Changelog:
+- New: LoRA and LyCORIS support
+- New: LoRA training GUI (replaces Dreambooth, works with 8 GB GPUs)
+- New: Option to auto-delete generated images afterwards (if they weren't copied to favs)
+- Improved: Updater is much more stable now, and only re-installs updated/new packages
+- Improved: External VAEs now also work with Diffusers models
+- Improved: Image progress bar now takes high-res fix into account instead of running twice
+- Improved: Max seed increased from 4294967295 to 9223372036854775807 (int64 max)
+- Improved: VAE folders are now separate from model folders (again)
+- Improved: Embeddings folder path can now be changed
+- Improved: Progress bar and ETA now accounts for queued tasks instead of running per-task
+- Improved: Image Viewer buttons (e.g. prev/next) are now disabled when there are no images to show
+- Improved: Various UI/UX improvements
+- Fixed issues caused by moving the installation folder, this should now work without problems
+- Fixed: Applying CLIP Skip to a model would make it impossible to disable it again
+- Fixed: Inpainting model name check is no longer case-sensitive and no longer requires a hyphen
+- Fixed: "Append To Prompt" button for embeddings will no longer add a comma if there already is one
+
+
+SD GUI 1.10.0 Changelog:
+- New: Support for Stable Diffusion 2.x models
+- New: Added outpainting (expanding images into any direction)
+- New: Built-in Self-Updater (experimental)
+- New: Added Karras samplers, including DPM++ 2M Karras
+- New: Image generation symmetry options
+- New: Utility to directly download Huggingface Diffusers models (no need for git clone etc.)
+- New: Option to skip last CLIP layers ("CLIP Skip") which can improve quality with some models
+- New: Chroma key option when loading an image (e.g. turn black pixels transparent)
+- New additional config file "settings.ini" where power users can adjust certain values
+- Improved: Loading transparent images from clipboard is now possible
+- Improved: Any model format can now be loaded directly, Diffusers (fastest), Safetensors, Ckpt
+- Improved: Prompts can now be longer than 77 tokens (experimental)
+- Improved: Textual Inversion embeddings are now properly integrated, newer formats supported
+- Improved: InstructPix2Pix and SD ONNX no longer need to reload the model on each run
+- Improved: Maximum resolution and prompt history limit have been increased
+- Improved: UI is now split into categories that can be collapsed
+- Improved: A wide range of UI/UX performance improvements, reduced flickering, etc
+- Too many bug fixes to list
+
+
+SD GUI 1.9.1 Changelog:
+- New: Resolution can now also be adjusted in InstructPix2Pix mode (resizes input image)
+- New: Resulting aspect ratio is shown next to resolution option
+- New: Right-click image menu in InstructPix2Pix has an option to copy a comparison image
+- Improved: Model compatibility, any Safetensors file should now work fine after conversion
+- Improved: Model converter no longer includes 1 GB safety checker in ONNX outputs
+- Improved: Image Viewer now shows image resolution info in InstructPix2Pix mode
+- Improved: InstructPix2Pix no longer downloads unnecessary files, now <2GB
+- Fixed: InstructPix2Pix errors when trying to run it without internet connection
+- Fixed: Certain options result in filenames being too long causing issues
+- Fixed: Stable Diffusion model gets reloaded if amount of free RAM changed
+- Fixed: Image export breaks if initialization image(s) import takes too long
+- Fixed: "Open Output Folder" opens Documents folder
+- Fixed: ONNX and InstructPix2Pix don't accept images with UTF8 characters in path
+- Fixed: Running InvokeAI post-processing sometimes fails due to long paths
+- Fixed: Issues with comma vs dot, depending on Windows region settings
+
+Notes:
+- InstructPix2Pix supports resolutions divisible by 8, not only 64 like regular SD
+- SD 2.x models are not yet supported, scheduled for next major update
+
+
+
+SD GUI 1.9.0 Changelog:
+- New: InstructPix2Pix (Settings -> Image Generation Implementation -> InstructPix2Pix)
+- New: Option to show the input image next to the output for comparisons
+- New: Option to choose output filename timestamp (None, Date, Date+Time, Epoch)
+- Improved: minor UI fixes, e.g. no more scrollbar in main view if there is enough space
+- Fixed: Dreambooth learning rate multiplier would default to 2x
+- Fixed: Minor PNG metadata parsing issues
+- Fixed: Various of other minor fixes
+
